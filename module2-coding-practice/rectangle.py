@@ -1,13 +1,14 @@
 """
 Filename: rectangle.py
 
-Write a program that reads the length of a rectangle's sides and then prints
+Write a program that reads the length of a rectangle's sides and
+then prints the area and perimeter of the rectangle the length of
+the diagonal (use the Pythagorean theorem).
 
-the area and perimeter of the rectangle
+Hint: you can calculate the square root of a number by raising it to
+the 0.5 power.
 
-the length of the diagonal (use the Pythagorean theorem)
-
-Hint: you can calculate the square root of a number by raising it to the 0.5 power. For example:
+For example:
 
 Enter width: 9
 Enter height: 3
@@ -32,7 +33,7 @@ def main():
     diagonal = math.sqrt(width ** 2 + height ** 2)
     print("The area of the rectangle is {}".format(area))
     print("The perimeter of the rectangle is {}".format(perimeter))
-    print("The diagonal is {}".format(diagonal))
+    print("The diagonal of the rectangle is {}".format(diagonal))
 
 
 if __name__ == '__main__':

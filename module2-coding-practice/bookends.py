@@ -1,5 +1,6 @@
 """
-Write a program that reads a 4-digit number from the keyboard and prints the first and last digits of the number.
+Write a program that reads a 4-digit number from the keyboard and prints
+the first and last digits of the number.
 For example,
 
 Enter number: 1234

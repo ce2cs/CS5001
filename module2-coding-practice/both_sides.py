@@ -1,6 +1,7 @@
 """
-Write a program that prompts with "Enter value: " and reads in an integer value from the keyboard
-and prints the appropriate message depending upon the value of that input according to the following table:
+Write a program that prompts with "Enter value: " and reads in an
+integer value from the keyboard and prints the appropriate message depending
+upon the value of that input according to the following table:
 
 Even or odd     Value           Message
 Even            negative        "even negative number"

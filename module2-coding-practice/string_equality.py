@@ -1,7 +1,9 @@
 """
 Write a program that reads in a word from the keyboard and prints
-"Hi, how are you" and "Done" if someone enters the word "Hi" (capitalization matters).
-Otherwise it just prints "Done". For example,
+"Hi, how are you" and "Done" if someone enters the word "Hi"
+(capitalization matters). Otherwise it just prints "Done".
+
+For example,
 
 Hi
 Hi, how are you?

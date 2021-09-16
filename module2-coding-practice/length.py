@@ -1,6 +1,8 @@
 """
-Write a program that reads a measurement in meters and the converts it to inches, feet, and miles.
-There are 39.3701 inches in a meter. For example:
+Write a program that reads a measurement in meters and the converts
+it to inches, feet, and miles. There are 39.3701 inches in a meter.
+
+For example:
 
 Enter length: 42
 The length in inches is 1653.5442

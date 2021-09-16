@@ -1,6 +1,8 @@
 """
-Write a program that completes and prints out the following truth table.
-Recall from this module that a truth table contains all of the possible combination of p, q, and r.
+Write a program that completes and prints out the following
+truth table. Recall from this module that a truth table contains
+all of the possible combination of p, q, and r.
+
 You should use the |, -, and + to build the lines in the table.
 p	q	r	A	B
 F	F	F	?	?
@@ -31,7 +33,11 @@ def main():
                 B = not (p and (q or not r))
                 B_str = FORMAT_TRUE if B else FORMAT_FALSE
                 print("+---" * 5 + "+")
-                print("|" + "|".join([p_str, q_str, r_str, A_str, B_str]) + "|")
+                print(
+                    "|" + "|".join(
+                        [p_str, q_str, r_str, A_str, B_str]
+                    ) + "|"
+                )
     print("+---" * 5 + "+")
 
 

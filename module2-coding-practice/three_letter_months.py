@@ -31,9 +31,12 @@ def main():
        days = "Unknown"
    print(month, "has", days, "days")
 
-This code only works if the month that is entered in the keyboard is entered in using their 3-letter abbreviation.
-Modify the code to be able to handle full month names as well as their numeric equivalent.
-For example, Feb, February, and 2 would set days = 28. Do this using logical operators.
+This code only works if the month that is entered in the keyboard is entered
+in using their 3-letter abbreviation. Modify the code to be able to handle full
+month names as well as their numeric equivalent.
+
+For example, Feb, February, and 2 would set days = 28.
+Do this using logical operators.
 """
 
 

@@ -1,8 +1,10 @@
 """
-Write a program that reads in a number from the keyboard. Your program should ensure that the value entered
-is between 1 and 100 by clamping it and then print it to the screen. Clamping a number means that
-any value less than the lowest value is set to the lowest value and that
-any value larger than the largest value is set to the largest value.
+Write a program that reads in a number from the keyboard.
+Your program should ensure that the value entered
+is between 1 and 100 by clamping it and then print it to the screen.
+Clamping a number means that any value less than the lowest value
+is set to the lowest value and that any value larger than the largest
+value is set to the largest value.
 
 Examples:
 

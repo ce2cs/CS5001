@@ -1,6 +1,9 @@
 """
-Write a program that reads four integers from the keyboard and prints "two pairs"
-if the input consists of two matching pairs (in some order) and "not two pairs" otherwise. For example,
+Write a program that reads four integers from the keyboard
+and prints "two pairs" if the input consists of two matching pairs
+(in some order) and "not two pairs" otherwise.
+
+For example,
 
 1 2 2 1   two pairs
 1 2 2 3   not two pairs
@@ -15,7 +18,9 @@ def main():
         four_integers_list = map(lambda i: int(i), four_integers_list)
 
     except Exception as e:
-        print("Please input a four integers divide by single space in one line")
+        print(
+            "Please input a four integers divide by single space in one line"
+        )
         return
 
     viewed = set()
