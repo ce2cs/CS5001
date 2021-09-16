@@ -29,9 +29,9 @@ def main():
     if n > 100:
         print("Too big, clamping required")
         print("Value is 100")
-    elif n < 0:
+    elif n < 1:
         print("Too small, clamping required")
-        print("Value is 0")
+        print("Value is 1")
     else:
         print("Value is {}".format(n))
 

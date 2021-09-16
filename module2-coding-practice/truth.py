@@ -16,6 +16,7 @@ T	T	T	?	?
 FORMAT_TRUE = " T "
 FORMAT_FALSE = " F "
 
+
 def main():
     print("+---" * 5 + "+")
     print("|" + "|".join([" p ", " q ", " r ", " A ", " B "]) + "|")
@@ -27,7 +28,7 @@ def main():
                 r = r_str == FORMAT_TRUE
                 A = (p and q) or not r
                 A_str = FORMAT_TRUE if A else FORMAT_FALSE
-                B = not(p and (q or not r))
+                B = not (p and (q or not r))
                 B_str = FORMAT_TRUE if B else FORMAT_FALSE
                 print("+---" * 5 + "+")
                 print("|" + "|".join([p_str, q_str, r_str, A_str, B_str]) + "|")
