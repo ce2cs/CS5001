@@ -11,6 +11,7 @@ For example,
 """
 
 
+int()
 def main():
     try:
         four_integers = input()
