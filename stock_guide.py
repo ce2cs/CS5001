@@ -1,5 +1,5 @@
 def main():
-    rating = int(input("Input rating:"))
+    rating = int(input("Input rating: "))
     if rating > 100:
         print("Buy a lot")
     elif rating > 76:

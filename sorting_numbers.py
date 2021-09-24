@@ -1,7 +1,7 @@
 def main():
-    first_number = float(input("Input first number:"))
-    second_number = float(input("Input second number:"))
-    third_number = float(input("Input third number:"))
+    first_number = float(input("Input first number: "))
+    second_number = float(input("Input second number: "))
+    third_number = float(input("Input third number: "))
     if first_number <= second_number:
         if second_number <= third_number:
             print(first_number, second_number, third_number)

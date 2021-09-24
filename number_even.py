@@ -1,5 +1,5 @@
 def main():
-    number = int(input("Input number:"))
+    number = int(input("Input number: "))
     if number % 2 == 0:
         print(number, "is even")
     else:
