@@ -11,7 +11,10 @@ def main():
     elif operator == "*":
         res = first_number_float * second_number_float
     elif operator == "/":
-        res = first_number_float / second_number_float
+        if second_number_float == 0:
+            res = "NaN"
+        else:
+            res = first_number_float / second_number_float
     else:
         print("Invalid operator. Please use +,-,*,/.")
         return
