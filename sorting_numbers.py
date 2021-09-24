@@ -15,7 +15,7 @@ def main():
         elif third_number <= second_number:
             sorted_numbers = [third_number, second_number, first_number]
         else:
-            sorted_numbers = [second_number, third_number, second_number]
+            sorted_numbers = [second_number, third_number, first_number]
     print(", ".join([str(n) for n in sorted_numbers]))
 
 
