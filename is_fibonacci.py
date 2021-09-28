@@ -1,4 +1,6 @@
 def is_fibonacci(n):
+    if n == 0 or n == 1:
+        return True
     i = 0
     j = 1
     while j < n:
@@ -30,8 +32,10 @@ def main():
     ]
 
     for i in range(len(test_paras)):
-        pass_or_fail = "passed" if expected[i] == is_fibonacci(*test_paras[i]) else "failed"
-        print(pass_or_fail, "Test Case", i, "parameters:", test_paras[i], "expected:", expected[i])
+        pass_or_fail = "passed" \
+            if expected[i] == is_fibonacci(*test_paras[i]) else "failed"
+        print(pass_or_fail, "Test Case", i, "parameters:",
+              test_paras[i], "expected:", expected[i])
 
 
 if __name__ == '__main__':

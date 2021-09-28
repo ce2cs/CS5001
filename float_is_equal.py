@@ -21,8 +21,10 @@ def main():
     ]
 
     for i in range(len(test_paras)):
-        pass_or_fail = "passed" if expected[i] == float_is_equal(*test_paras[i]) else "failed"
-        print(pass_or_fail, "Test Case", i, "parameters:", test_paras[i], "expected:", expected[i])
+        pass_or_fail = "passed" \
+            if expected[i] == float_is_equal(*test_paras[i]) else "failed"
+        print(pass_or_fail, "Test Case", i, "parameters:",
+              test_paras[i], "expected:", expected[i])
 
 
 if __name__ == '__main__':
