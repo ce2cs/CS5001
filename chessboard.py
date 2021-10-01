@@ -1,4 +1,14 @@
 def chessboard(width, height):
+    """
+    generate chessboard according to width and height
+    :param width: int, the width of the chessboard
+    :param height: int, the height of the chessboard
+    :return: string, chessboard looks like:
+        "BWBWBWBW
+         WBWBWBWB
+         BWBWBWBW
+         WBWBWBWB"
+    """
     board = ""
     for h in range(height):
         for w in range(width):
@@ -8,6 +18,10 @@ def chessboard(width, height):
 
 
 def main():
+    """
+    test program for chessboard function
+    :return: None
+    """
     test_paras = [
         (8, 4),
         (7, 3)

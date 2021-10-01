@@ -1,4 +1,10 @@
 def translate(english_day):
+    """
+    translate a English day word into French
+    :param english_day: string, English day word,
+    both lowercase and uppercase should be allowed
+    :return: string, the French translation
+    """
     french_dictionary = {
         "monday": "lundi",
         "tuesday": "mardi",
@@ -15,6 +21,10 @@ def translate(english_day):
 
 
 def main():
+    """
+    test program for french_dictionary
+    :return: None
+    """
     test_paras = [
         ("MONDAY",),
         ("Tuesday",),

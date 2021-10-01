@@ -1,4 +1,9 @@
 def is_fibonacci(n):
+    """
+    check if a number is in fibonacci array
+    :param n: int, input number
+    :return: boolean, true if input number is in fibonacci array
+    """
     if n == 0 or n == 1:
         return True
     i = 0
@@ -11,6 +16,10 @@ def is_fibonacci(n):
 
 
 def main():
+    """
+    test program for is_fibonacci
+    :return: None
+    """
     test_paras = [
         (1,),
         (2,),
