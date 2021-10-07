@@ -17,13 +17,11 @@ def atm():
     if withdraw >= 3:
         cash_count[-1] += 1
 
-    res = ""
     for i in range(len(cash_number)):
         if cash_count[i] > 1:
-            res += str(cash_count[i]) + " " + cash_name_plural[i] + "\n"
+            print(str(cash_count[i]) + " " + cash_name_plural[i])
         elif cash_count[i] > 0:
-            res += str(cash_count[i]) + " " + cash_name_single[i] + "\n"
-    print(res)
+            print(str(cash_count[i]) + " " + cash_name_single[i])
 
 
 def main():
