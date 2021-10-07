@@ -1,5 +1,5 @@
-def atm(withdraw):
-    withdraw = float(withdraw)
+def atm():
+    withdraw = float(input("Input request: "))
     withdraw = round(withdraw, 2)
     withdraw *= 100
     withdraw = int(withdraw)
@@ -24,37 +24,37 @@ def atm(withdraw):
         elif cash_count[i] > 0:
             res += str(cash_count[i]) + " " + cash_name_single[i] + "\n"
     print(res)
-    return res
 
 
 def main():
-    with open('atm_tests.txt') as f:
-        curr_input = None
-        curr_expect = ""
-        case_idx = 0
-        for line in f.readlines():
-            if line.startswith("Input request:"):
-                if curr_input:
-                    curr_got = atm(curr_input)
-                    if curr_got == curr_expect:
-                        print("Test", case_idx, "passed")
-                    else:
-                        print("Test", case_idx, "failed")
-                        print("Expected:\n" + curr_expect)
-                        print("Got:\n" + curr_got)
-                    case_idx += 1
-                curr_input = line[15:]
-                curr_expect = ""
-            else:
-                curr_expect += line
-
-        curr_got = atm(curr_input)
-        if curr_got == curr_expect:
-            print("Test", case_idx, "passed")
-        else:
-            print("Test", case_idx, "failed")
-            print("Expected:\n" + curr_expect)
-            print("Got:\n" + curr_got)
+    # with open('atm_tests.txt') as f:
+    #     curr_input = None
+    #     curr_expect = ""
+    #     case_idx = 0
+    #     for line in f.readlines():
+    #         if line.startswith("Input request:"):
+    #             if curr_input:
+    #                 curr_got = atm(curr_input)
+    #                 if curr_got == curr_expect:
+    #                     print("Test", case_idx, "passed")
+    #                 else:
+    #                     print("Test", case_idx, "failed")
+    #                     print("Expected:\n" + curr_expect)
+    #                     print("Got:\n" + curr_got)
+    #                 case_idx += 1
+    #             curr_input = line[15:]
+    #             curr_expect = ""
+    #         else:
+    #             curr_expect += line
+    #
+    #     curr_got = atm(curr_input)
+    #     if curr_got == curr_expect:
+    #         print("Test", case_idx, "passed")
+    #     else:
+    #         print("Test", case_idx, "failed")
+    #         print("Expected:\n" + curr_expect)
+    #         print("Got:\n" + curr_got)
+    atm()
 
 
 if __name__ == '__main__':
