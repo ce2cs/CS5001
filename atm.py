@@ -21,6 +21,7 @@ def atm():
         cash_count.append(withdraw // cash_number[i])
         withdraw %= cash_number[i]
 
+    # we do not have cents so we round to nickels
     if withdraw >= 3:
         cash_count[-1] += 1
 
