@@ -23,6 +23,7 @@ def atm(withdraw):
             res += str(cash_count[i]) + " " + cash_name_plural[i] + "\n"
         elif cash_count[i] > 0:
             res += str(cash_count[i]) + " " + cash_name_single[i] + "\n"
+    print(res)
     return res
 
 
