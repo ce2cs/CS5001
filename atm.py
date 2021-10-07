@@ -1,8 +1,15 @@
 def atm():
+    """
+    This function simulates the behavior of an ATM
+    it receives a withdraw number from stdin and
+    print the cashes
+    :return: None
+    """
     withdraw = float(input("Input request: "))
     withdraw = round(withdraw, 2)
     withdraw *= 100
     withdraw = int(withdraw)
+    # prepare all constants
     cash_number = [5000, 2000, 1000, 500, 200, 100, 25, 10, 5]
     cash_name_single = ['fifty', 'twenty', 'ten', 'five',
                         'toony', 'loony', 'quarter', 'dime', 'nickel']
@@ -25,33 +32,6 @@ def atm():
 
 
 def main():
-    # with open('atm_tests.txt') as f:
-    #     curr_input = None
-    #     curr_expect = ""
-    #     case_idx = 0
-    #     for line in f.readlines():
-    #         if line.startswith("Input request:"):
-    #             if curr_input:
-    #                 curr_got = atm(curr_input)
-    #                 if curr_got == curr_expect:
-    #                     print("Test", case_idx, "passed")
-    #                 else:
-    #                     print("Test", case_idx, "failed")
-    #                     print("Expected:\n" + curr_expect)
-    #                     print("Got:\n" + curr_got)
-    #                 case_idx += 1
-    #             curr_input = line[15:]
-    #             curr_expect = ""
-    #         else:
-    #             curr_expect += line
-    #
-    #     curr_got = atm(curr_input)
-    #     if curr_got == curr_expect:
-    #         print("Test", case_idx, "passed")
-    #     else:
-    #         print("Test", case_idx, "failed")
-    #         print("Expected:\n" + curr_expect)
-    #         print("Got:\n" + curr_got)
     atm()
 
 
