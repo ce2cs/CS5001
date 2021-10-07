@@ -26,7 +26,7 @@ def atm(withdraw):
     return res
 
 
-if __name__ == '__main__':
+def main():
     with open('atm_tests.txt') as f:
         curr_input = None
         curr_expect = ""
@@ -56,4 +56,5 @@ if __name__ == '__main__':
             print("Got:\n" + curr_got)
 
 
-
+if __name__ == '__main__':
+    main()
