@@ -1,8 +1,13 @@
 def get_day_string():
+    """
+    Return the days of the week as string format
+    using which_day function
+    :return: days of the week with space between
+    """
     days = ""
     for i in range(1, 8):
         days += which_day(i) + " "
-    print(days.strip())
+    return days.strip()
 
 
 def which_day(day_integer):
@@ -23,5 +28,18 @@ def which_day(day_integer):
     return days[day_integer - 1]
 
 
+def main():
+    """
+    Test function of get_day_string
+    :return: None
+    """
+    expected = "Sunday Monday Tuesday Wednesday Thursday Friday Saturday"
+    actual = get_day_string()
+    if actual == expected:
+        print("Test Passed!")
+    else:
+        print("Test Failed!")
+
+
 if __name__ == '__main__':
-    get_day_string()
+    main()

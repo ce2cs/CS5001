@@ -1,4 +1,9 @@
 def add_evens(lst):
+    """
+    Add all even numbers in input list
+    :param lst: list of Integer
+    :return: Integer, sum of even numbers
+    """
     result = 0
     for num in lst:
         if num % 2 == 0:
@@ -7,6 +12,10 @@ def add_evens(lst):
 
 
 def main():
+    """
+    Test function of add_evens
+    :return: None
+    """
     source = [3, 5, 1, 23, 55, 2]
     expected = 2
     actual = add_evens(source)

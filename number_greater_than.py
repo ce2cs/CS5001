@@ -1,7 +1,11 @@
-import random
-
-
 def number_greater_than(list1, list2):
+    """
+    Return the number of elements in list1 that is
+    greater than list2 at same position
+    :param list1: Integer of list
+    :param list2: Integer of list
+    :return: Count of greater elements
+    """
     result = 0
     for i in range(len(list1)):
         if list1[i] > list2[i]:
@@ -10,6 +14,10 @@ def number_greater_than(list1, list2):
 
 
 def main():
+    """
+    Test function of number_greater_than
+    :return: None
+    """
     list1 = [3, 5, 1, 23, 55, 2]
     list2 = [12, 23, 1, 1, 2, 5]
     expected = 2

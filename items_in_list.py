@@ -1,4 +1,11 @@
 def items_in_list(list1, list2):
+    """
+    Return element from list1 presented in list2,
+    elements in result list should be unique
+    :param list1: Integer of list
+    :param list2: Integer of list
+    :return: common elements
+    """
     result = []
     for ele1 in list1:
         if ele1 in list2 and ele1 not in result:
@@ -7,6 +14,10 @@ def items_in_list(list1, list2):
 
 
 def main():
+    """
+    Test function of items_in_list
+    :return: None
+    """
     list1 = [3, 5, 1, 23, 2]
     list2 = [12, 23, 1, 1, 2, 5]
     expected1 = [5, 1, 23, 2]
