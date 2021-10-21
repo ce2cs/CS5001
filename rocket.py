@@ -1,9 +1,9 @@
-def rocket():
+def rocket(rocket_size):
     """
     print rocket with input size
+    :param rocket_size: integer
     :return: None
     """
-    rocket_size = int(input())
     if rocket_size < 3:
         print("Rocket sizes must be at least 3")
         return
@@ -34,10 +34,10 @@ def print_head(width):
     slash_number = 1
     space_number = width // 2 - 2
     while slash_number < width // 2 - 1:
-        print(' ' * space_number +
-              "/" * slash_number +
-              "**" +
-              "\\" * slash_number +
+        print(' ' * space_number + \
+              "/" * slash_number + \
+              "**" + \
+              "\\" * slash_number + \
               ' ' * space_number)
         slash_number += 1
         space_number -= 1
@@ -64,12 +64,12 @@ def print_upper_triangle_compartment(width):
     # cal dot number between '|' and first triangle
     dot_num = 0
     while triangle_number > 0:
-        print('|' +
-              '.' * dot_num +
-              '\\/' * triangle_number +
-              '.' * dot_num * 2 +
-              '\\/' * triangle_number +
-              '.' * dot_num +
+        print('|' + \
+              '.' * dot_num + \
+              '\\/' * triangle_number + \
+              '.' * dot_num * 2 + \
+              '\\/' * triangle_number + \
+              '.' * dot_num + \
               '|')
         dot_num += 1
         triangle_number -= 1
@@ -85,16 +85,16 @@ def print_down_triangle_compartment(width):
     # cal dot number between '|' and first triangle
     dot_num = (width // 2 - 1 - triangle_number * 2) // 2
     while dot_num >= 0:
-        print('|' +
-              '.' * dot_num +
-              '/\\' * triangle_number +
-              '.' * dot_num * 2 +
-              '/\\' * triangle_number +
-              '.' * dot_num +
+        print('|' + \
+              '.' * dot_num + \
+              '/\\' * triangle_number + \
+              '.' * dot_num * 2 + \
+              '/\\' * triangle_number + \
+              '.' * dot_num + \
               '|')
         dot_num -= 1
         triangle_number += 1
 
 
 if __name__ == '__main__':
-    rocket()
+    rocket(5)
