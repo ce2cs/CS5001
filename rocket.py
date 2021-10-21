@@ -12,14 +12,14 @@ def rocket(rocket_size):
     width = rocket_size * 4 + 2
     return rocket_head(width) + \
            rocket_divider(width) + \
-           rocket_down_triangle_compartment(width) + \
-           rocket_upper_triangle_compartment(width) + \
-           rocket_divider(width) + \
            rocket_upper_triangle_compartment(width) + \
            rocket_down_triangle_compartment(width) + \
            rocket_divider(width) + \
            rocket_down_triangle_compartment(width) + \
            rocket_upper_triangle_compartment(width) + \
+           rocket_divider(width) + \
+           rocket_upper_triangle_compartment(width) + \
+           rocket_down_triangle_compartment(width) + \
            rocket_divider(width) + \
            rocket_head(width)
 
