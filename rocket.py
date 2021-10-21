@@ -2,7 +2,7 @@ def rocket(rocket_size):
     """
     print rocket with input size
     :param rocket_size: integer
-    :return: None
+    :return: rocket string
     """
     if rocket_size < 3:
         print("Rocket sizes must be at least 3")
@@ -11,24 +11,24 @@ def rocket(rocket_size):
     # cal width of the rocket
     width = rocket_size * 4 + 2
     return rocket_head(width) + \
-           rocket_divider(width) + \
-           rocket_upper_triangle_compartment(width) + \
-           rocket_down_triangle_compartment(width) + \
-           rocket_divider(width) + \
-           rocket_down_triangle_compartment(width) + \
-           rocket_upper_triangle_compartment(width) + \
-           rocket_divider(width) + \
-           rocket_upper_triangle_compartment(width) + \
-           rocket_down_triangle_compartment(width) + \
-           rocket_divider(width) + \
-           rocket_head(width)
+        rocket_divider(width) + \
+        rocket_upper_triangle_compartment(width) + \
+        rocket_down_triangle_compartment(width) + \
+        rocket_divider(width) + \
+        rocket_down_triangle_compartment(width) + \
+        rocket_upper_triangle_compartment(width) + \
+        rocket_divider(width) + \
+        rocket_upper_triangle_compartment(width) + \
+        rocket_down_triangle_compartment(width) + \
+        rocket_divider(width) + \
+        rocket_head(width)
 
 
 def rocket_head(width):
     """
-    print rocket head
+    generate rocket head, same as rocket rear
     :param width: the width of the rocket
-    :return: None
+    :return: rocket head string
     """
     # cal slash and space number in a line
     slash_number = 1
@@ -48,18 +48,18 @@ def rocket_head(width):
 
 def rocket_divider(width):
     """
-    print rocket divider between compartments
+    generate rocket divider between compartments
     :param width: the width of the rocket
-    :return: None
+    :return: divider string
     """
     return '+' + '=*' * (width // 2 - 1) + '+' + "\n"
 
 
 def rocket_upper_triangle_compartment(width):
     """
-    print rocket compartments within upward triangles
+    generate rocket compartments within upward triangles
     :param width: the width of the rocket
-    :return: None
+    :return: compartment string
     """
     # triangle_numbers '/\' of left half compartment
     # equal to the value of rocket size
@@ -83,9 +83,9 @@ def rocket_upper_triangle_compartment(width):
 
 def rocket_down_triangle_compartment(width):
     """
-    print rocket compartments within downward triangles
+    generate rocket compartments within downward triangles
     :param width: the width of the rocket
-    :return: None
+    :return: compartment string
     """
     triangle_number = 1
     # cal dot number between '|' and first triangle
