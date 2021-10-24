@@ -35,8 +35,10 @@ def test_flowchart_function():
     expected1 = "a\nbb\nccc\ndddd\neeeee\n"
     expected2 = "1\n22\n333\n4444\n55555\n"
     expected3 = "1.1\n2.22.2\n3.33.33.3\n"
-    expected4 = '\n'.join([str(test_case4[i]) * (i + 1) for i in range(len(test_case4))]) + '\n'
-    expected5 = '\n'.join([str(test_case5[i]) * (i + 1) for i in range(len(test_case5))]) + '\n'
+    expected4 = '\n'.join([str(test_case4[i]) * (i + 1)
+                           for i in range(len(test_case4))]) + '\n'
+    expected5 = '\n'.join([str(test_case5[i]) * (i + 1)
+                           for i in range(len(test_case5))]) + '\n'
     actual1 = flowchart_function(test_case1)
     if actual1 != expected1:
         print("Test 1 failed, expected:", expected1,
