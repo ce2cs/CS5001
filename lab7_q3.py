@@ -27,7 +27,8 @@ def test_filter_list():
     """
     test_case_numbers = [int(random.random() * 100) for _ in range(100)]
     test_case_threshold = 50
-    expected = list(filter(lambda x: x > test_case_threshold, test_case_numbers))
+    expected = list(filter(lambda x: x > test_case_threshold,
+                           test_case_numbers))
     actual = filter_list(test_case_numbers, test_case_threshold)
     if expected != actual:
         print("Test failed")

@@ -16,6 +16,9 @@ def count_by_fives_recursive(ending_value):
     :param ending_value: Integer
     :return: list of Integer
     """
+    # exclude edge case
+    if ending_value < 0:
+        return []
     # base case
     if ending_value < 5:
         return [0]
