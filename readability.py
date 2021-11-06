@@ -107,7 +107,8 @@ def main():
     except PermissionError:
         print("You do not have sufficient permissions to open", filename)
     except OSError:
-        print("An unexpected error occurred while attempting to open", filename)
+        print("An unexpected error occurred while attempting to open",
+              filename)
 
     # Read all of the contents of the file
     # into a list of strings called filedata.
