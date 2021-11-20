@@ -1,0 +1,8 @@
+13 7
+XXXXXXEXXXXXX
+X           X
+X X  XXX  X X
+E X       X E
+X X  XXX  X X
+X           X
+XXXXXXEXXXXXX
