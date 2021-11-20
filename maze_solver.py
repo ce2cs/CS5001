@@ -47,8 +47,10 @@ class MazeSolver:
         :return: None
         """
         try:
-            width, height = input("Please input the width and height of "
-                                  "the maze (separated by a space): ").split(" ")
+            width, height = input(
+                "Please input the width and height of "
+                "the maze (separated by a space): "
+            ).split(" ")
             width = int(width)
             height = int(height)
         except Exception as e:
@@ -110,14 +112,20 @@ class MazeSolver:
         height = len(self.maze)
         width = len(self.maze[0])
 
-        start_row, start_col = input("Please input row number and start col number,"
-                                     " separated by a space: ").split(" ")
+        start_row, start_col = input(
+            "Please input row number and start col number,"
+            "separated by a space: "
+        ).split(" ")
+
         start_row = int(start_row)
         start_col = int(start_col)
         # check the validation of start point
-        if start_row >= height or start_row < 0 or start_col >= width or start_col < 0:
-            raise ValueError("Please input valid integer of the start row and col number, "
-                             "The start_row should be bounded in the maze")
+        if start_row >= height or start_row < 0 or \
+                start_col >= width or start_col < 0:
+            raise ValueError(
+                "Please input valid integer of the start row and col number, "
+                "The start_row should be bounded in the maze"
+            )
 
         if self.maze[start_row][start_col] == "X":
             raise ValueError("Input position is occupied by a wall!")
@@ -161,7 +169,8 @@ class MazeSolver:
 
                 # store the direction and distance of neighbor position
                 self.direction[neighbor_row][neighbor_col] = direct
-                self.distance[neighbor_row][neighbor_col] = self.distance[curr_row][curr_col] + 1
+                self.distance[neighbor_row][neighbor_col] = \
+                    self.distance[curr_row][curr_col] + 1
 
                 # append neighbor node to the end of the queue
                 work_list.append((neighbor_row, neighbor_col))
@@ -198,7 +207,14 @@ class MazeSolver:
         height = len(self.maze)
         width = len(self.maze[0])
         # initialize the path by a deep copy of maze
-        self.path = [[self.maze[row][col] for col in range(width)] for row in range(height)]
+
+        self.path = [
+            [
+                self.maze[row][col] for col in range(width)
+            ]
+            for row in range(height)
+        ]
+
         self.path[start_row][start_col] = 'S'
 
         # start from exit point
@@ -264,10 +280,10 @@ class MazeSolver:
         try:
             command_idx = int(command_idx)
             if command_idx > 5 or command_idx <= 0:
-                raise ValueError("Please input a number within 1 to 5\n");
+                raise ValueError("Please input a number within 1 to 5\n")
             return command_idx
         except Exception as e:
-            raise ValueError("Please input a integer within 1 to 5\n");
+            raise ValueError("Please input a integer within 1 to 5\n")
 
     @staticmethod
     def check_maze(maze, width, height):
@@ -279,16 +295,24 @@ class MazeSolver:
         :return: None
         """
         if len(maze) != height:
-            raise ValueError("You should input maze lines that equal to height")
+            raise ValueError(
+                "You should input maze lines that equal to height"
+            )
         for row in range(height):
             if len(maze[row]) != width:
-                raise ValueError("You should input the maze line that equal to width")
+                raise ValueError(
+                    "You should input the maze line that equal to width"
+                )
             for col in range(width):
                 if maze[row][col] not in [" ", "X", "E"]:
-                    raise ValueError("Your maze should only contains space, X and E")
+                    raise ValueError(
+                        "Your maze should only contains space, X and E"
+                    )
                 if maze[row][col] == "E" and row != 0 and col != 0 and \
                         col != width - 1 and row != height - 1:
-                    raise ValueError("Exit can only appear on the perimeter of the maze")
+                    raise ValueError(
+                        "Exit can only appear on the perimeter of the maze"
+                    )
 
     def _clear_cached(self):
         """
