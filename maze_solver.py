@@ -132,7 +132,9 @@ class MazeSolver:
 
         # initialize the path, distance, direction
         self.path = None
-        self.distance = [[sys.maxsize for _ in range(width)] for _ in range(height)]
+        self.distance = [
+            [sys.maxsize for _ in range(width)]
+            for _ in range(height)]
         self.direction = [[None for _ in range(width)] for _ in range(height)]
 
         # distance to start point is 0
@@ -231,8 +233,12 @@ class MazeSolver:
 
         # draw the path follow the direction
         while True:
-            next_row = current_row + reverse_moves[self.direction[current_row][current_col]][0]
-            next_col = current_col + reverse_moves[self.direction[current_row][current_col]][1]
+            next_row = current_row + reverse_moves[
+                self.direction[current_row][current_col]
+            ][0]
+            next_col = current_col + reverse_moves[
+                self.direction[current_row][current_col]
+            ][1]
             # when move to the start point, return
             if next_row == start_row and next_col == start_col:
                 break
