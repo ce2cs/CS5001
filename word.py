@@ -17,8 +17,7 @@ class Word:
         :return: boolean
         """
         # check input parameter
-        if type(number_of_times) != int or number_of_times <= 0:
-            raise TypeError("you must input a positive integer")
+        number_of_times = int(number_of_times)
 
         # use stack and queue to store input word
         stack = Stack()
@@ -50,10 +49,7 @@ class Word:
         """
 
         # check input parameter
-        if type(number_of_repeats) != int:
-            raise TypeError("you must input a integer")
-        if number_of_repeats < 2:
-            raise ValueError("you must input a integer greater or equal to 2")
+        number_of_repeats = int(number_of_repeats)
 
         # if input word can not be divide by number_of_repeats,
         # then it cannot be formed by a pattern repeat number_of_repeats time
