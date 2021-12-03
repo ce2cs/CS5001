@@ -5,6 +5,7 @@ class Word:
         :param input_word: string
         """
         # check input format
+        print(input_word)
         if type(input_word) != str:
             raise ValueError("you must input a string")
         self.input_word = input_word
@@ -18,6 +19,9 @@ class Word:
         """
         # check input parameter
         number_of_times = int(number_of_times)
+        if number_of_times < 1:
+            raise ValueError("you must input a positive integer"
+                             "greater than or equal to 2")
 
         # use stack and queue to store input word
         stack = Stack()
@@ -50,6 +54,8 @@ class Word:
 
         # check input parameter
         number_of_repeats = int(number_of_repeats)
+        if number_of_repeats < 0:
+            raise ValueError("you must input a positive integer")
 
         # if input word can not be divide by number_of_repeats,
         # then it cannot be formed by a pattern repeat number_of_repeats time
