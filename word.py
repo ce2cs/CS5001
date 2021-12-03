@@ -5,9 +5,11 @@ class Word:
         :param input_word: string
         """
         # check input format
-        print(input_word)
         if type(input_word) != str:
             raise ValueError("you must input a string")
+        for letter in input_word:
+            if not letter.isalnum():
+                raise ValueError("you must input a single world")
         self.input_word = input_word
 
     def is_palindrome(self, number_of_times):
@@ -21,7 +23,7 @@ class Word:
         number_of_times = int(number_of_times)
         if number_of_times < 1:
             raise ValueError("you must input a positive integer"
-                             "greater than or equal to 2")
+                             "greater than or equal to 1")
 
         # use stack and queue to store input word
         stack = Stack()
@@ -33,8 +35,9 @@ class Word:
         # every time we check if our current word is a palindrome
         # by dump half of the stack and queue, and check whether
         # dumped result are same.
+        half_size = len(self.input_word)
         for times in range(1, number_of_times + 1):
-            half_size = len(self.input_word) // (2 * times)
+            half_size //= 2
             for _ in range(half_size):
                 # stack and queue are empty means the input palindrome
                 # time is greater than the real palindrome time
@@ -54,8 +57,9 @@ class Word:
 
         # check input parameter
         number_of_repeats = int(number_of_repeats)
-        if number_of_repeats < 0:
-            raise ValueError("you must input a positive integer")
+        if number_of_repeats < 2:
+            raise ValueError("you must input a positive integer"
+                             "greater than or equal to 2")
 
         # if input word can not be divide by number_of_repeats,
         # then it cannot be formed by a pattern repeat number_of_repeats time
