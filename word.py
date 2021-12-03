@@ -6,7 +6,7 @@ class Word:
         """
         # check input format
         if type(input_word) != str:
-            print("you must input a string")
+            raise ValueError("you must input a string")
         self.input_word = input_word
 
     def is_palindrome(self, number_of_times):
@@ -17,8 +17,8 @@ class Word:
         :return: boolean
         """
         # check input parameter
-        if type(int) != int or number_of_times <= 0:
-            print("you must input a positive integer")
+        if type(number_of_times) != int or number_of_times <= 0:
+            raise TypeError("you must input a positive integer")
 
         # use stack and queue to store input word
         stack = Stack()
@@ -31,12 +31,12 @@ class Word:
         # by dump half of the stack and queue, and check whether
         # dumped result are same.
         for times in range(1, number_of_times + 1):
-            # stack and queue are empty means the palindrome time
-            # is beyond the real palindrome time
-            if stack.is_empty() or queue.is_empty():
-                return False
             half_size = len(self.input_word) // (2 * times)
             for _ in range(half_size):
+                # stack and queue are empty means the input palindrome
+                # time is greater than the real palindrome time
+                if stack.is_empty() or queue.is_empty():
+                    return False
                 if stack.pop() != queue.dequeue():
                     return False
         return True
@@ -51,9 +51,9 @@ class Word:
 
         # check input parameter
         if type(number_of_repeats) != int:
-            print("you must input a integer")
+            raise TypeError("you must input a integer")
         if number_of_repeats < 2:
-            print("you must input a integer greater or equal to 2")
+            raise ValueError("you must input a integer greater or equal to 2")
 
         # if input word can not be divide by number_of_repeats,
         # then it cannot be formed by a pattern repeat number_of_repeats time
