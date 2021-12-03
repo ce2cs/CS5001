@@ -1,8 +1,0 @@
-13 7
-XXXXXXXXXXXXX
-X           X
-XXXXXXXXXXXXX
-X           X
-X  XXXXXXX  X
-X           X
-XXXXXXEXXXXXX
