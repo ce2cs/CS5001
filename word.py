@@ -6,7 +6,7 @@ class Word:
         """
         # check input format
         if type(input_word) != str:
-            raise TypeError("you must input a string")
+            print("you must input a string")
         self.input_word = input_word
 
     def is_palindrome(self, number_of_times):
@@ -18,7 +18,7 @@ class Word:
         """
         # check input parameter
         if type(int) != int or number_of_times <= 0:
-            raise TypeError("you must input a positive integer")
+            print("you must input a positive integer")
 
         # use stack and queue to store input word
         stack = Stack()
@@ -51,9 +51,9 @@ class Word:
 
         # check input parameter
         if type(number_of_repeats) != int:
-            raise TypeError("you must input a integer")
+            print("you must input a integer")
         if number_of_repeats < 2:
-            raise ValueError("you must input a integer greater or equal to 2")
+            print("you must input a integer greater or equal to 2")
 
         # if input word can not be divide by number_of_repeats,
         # then it cannot be formed by a pattern repeat number_of_repeats time
