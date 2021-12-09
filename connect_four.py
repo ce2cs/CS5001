@@ -2,7 +2,8 @@ class ConnectFour:
     def __init__(self):
         self._row_num = 6
         self._col_num = 7
-        self._board = [[' ' for _ in range(self._col_num)] for _ in range(self._row_num)]
+        self.board = [[' ' for _ in range(self._col_num)]
+                      for _ in range(self._row_num)]
         self._game_over = False
         self._moves_stack = []
         self._winner = None
@@ -19,8 +20,8 @@ class ConnectFour:
 
         curr_player = self.get_current_player()
         for row in reversed(range(self._row_num)):
-            if self._board[row][column] == ' ':
-                self._board[row][column] = curr_player
+            if self.board[row][column] == ' ':
+                self.board[row][column] = curr_player
                 self._moves_stack.append((curr_player, row, column))
                 max_length = self._get_connected_length(row, column)
                 if max_length >= 4:
@@ -52,7 +53,7 @@ class ConnectFour:
             self._game_over = False
             self._winner = None
 
-        self._board[row][col] = ' '
+        self.board[row][col] = ' '
 
     def is_game_over(self):
         return self._game_over
@@ -67,13 +68,13 @@ class ConnectFour:
         horizontal_line = '-' * (self._col_num * 2 + 1)
         board_str = ''
         for row in range(self._row_num):
-            board_str += '|' + '|'.join(self._board[row]) + '|' + '\n'
+            board_str += '|' + '|'.join(self.board[row]) + '|' + '\n'
             board_str += horizontal_line + '\n'
         board_str = board_str[:-1]
         return board_str
 
     def _get_connected_length(self, central_row, central_col):
-        player = self._board[central_row][central_col]
+        player = self.board[central_row][central_col]
         directions = [
             ((0, 1), (0, -1)),
             ((1, 0), (-1, 0)),
@@ -87,8 +88,9 @@ class ConnectFour:
             for row_move, col_move in direction:
                 row_ptr = central_row + row_move
                 col_ptr = central_col + col_move
-                while 0 <= row_ptr < self._row_num and 0 <= col_ptr < self._col_num:
-                    if self._board[row_ptr][col_ptr] != player:
+                while 0 <= row_ptr < self._row_num \
+                        and 0 <= col_ptr < self._col_num:
+                    if self.board[row_ptr][col_ptr] != player:
                         break
                     direction_length += 1
                     row_ptr += row_move
