@@ -4,7 +4,14 @@ from readability import *
 
 
 class Book:
-    def __init__(self, isbn, title, author, publish_year, file_format, resource_path):
+    def __init__(self,
+                 isbn,
+                 title,
+                 author,
+                 publish_year,
+                 file_format,
+                 resource_path):
+
         isbn = str(isbn)
         if len(isbn) != 13 or \
                 not (isbn.startswith("978") or isbn.startswith("979")) or \
@@ -93,6 +100,7 @@ class Book:
             if len(word) > 0:
                 words_count[word] = words_count.setdefault(word, 0) + 1
                 word = ""
+        print(words_count)
 
         opened_file.close()
         return words_count
