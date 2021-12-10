@@ -88,8 +88,8 @@ class Book:
             hyphen_break_word_first_half = ""
             for i in range(len(line)):
                 if line[i].isalnum():
-                    word += line[i]
-                elif line[i] == '-' and i == len(line) - 1:
+                    word += line[i].lower()
+                elif line[i] == '-' and i == len(line) - 2:
                     hyphen_break_word_first_half = word
                     word = ""
                 elif line[i] == '-':
@@ -97,9 +97,6 @@ class Book:
                 elif len(word) > 0:
                     words_count[word] = words_count.setdefault(word, 0) + 1
                     word = ""
-            if len(word) > 0:
-                words_count[word] = words_count.setdefault(word, 0) + 1
-                word = ""
         print(words_count)
 
         opened_file.close()
