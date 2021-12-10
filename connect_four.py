@@ -39,7 +39,7 @@ class ConnectFour:
 
     def undo(self):
         if len(self._moves_stack) == 0:
-            return
+            raise ValueError("There is no move stored")
 
         player, row, col = self._moves_stack.pop()
         if row == 0:
@@ -70,7 +70,6 @@ class ConnectFour:
         for row in range(self._row_num):
             board_str += '|' + '|'.join(self.board[row]) + '|' + '\n'
             board_str += horizontal_line + '\n'
-        board_str = board_str[:-1]
         return board_str
 
     def _get_connected_length(self, central_row, central_col):
