@@ -29,7 +29,6 @@ def store_words(file_data):
     Returns a dictionary where the key is the word length, and the value
         is all of the words in file_data that of that length
     '''
-    # TODO: Implement me!!
     length_to_words = {}
     for word in file_data:
         length_to_words.setdefault(len(word), []).append(word)
@@ -72,21 +71,23 @@ def get_words(max_length, word_dict, letters):
         max_length -- maximum length of the word to be displayed
     Returns a list of words containing the user input letters
     '''
-    # TODO Implement me!!
     matched_words = []
     for length in range(max_length + 1):
         if length not in word_dict:
             continue
         for word in word_dict[length]:
+            # break the word into letter count map
             word_letter_count = {}
             for letter in word:
                 if letter not in word_letter_count:
                     word_letter_count[letter] = 0
                 word_letter_count[letter] += 1
-
+            # check if all letters can find a match in
+            # word's letter count map
             all_matched = True
             for letter in letters:
-                if letter not in word_letter_count or word_letter_count[letter] == 0:
+                if letter not in word_letter_count \
+                        or word_letter_count[letter] == 0:
                     all_matched = False
                     break
                 word_letter_count[letter] -= 1
@@ -106,7 +107,6 @@ def get_scores(words):
         words -- List of words containing the user input letters
     Returns a dictionary containing the points as keys and the words as values
     '''
-    # TODO: Implement me!!
     character_values = {'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2,
                         'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1,
                         'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1,
@@ -129,9 +129,11 @@ def print_scores(scores, number):
         number -- number of highest scoring words to display
     '''
     if not isinstance(scores, dict):
-        raise TypeError("scrabble_scores is expecting a dictionary as the first parameter")
+        raise TypeError("scrabble_scores is expecting "
+                        "a dictionary as the first parameter")
     if not isinstance(number, int):
-        raise TypeError("scrabble_scores is expecting an integer as the second parameter")
+        raise TypeError("scrabble_scores is expecting "
+                        "an integer as the second parameter")
 
     count = 1
     for key in sorted(scores, reverse=True):
