@@ -4,6 +4,9 @@ from readability import *
 
 
 class Book:
+    """
+    Book class contains information of a book
+    """
     def __init__(self,
                  isbn,
                  title,
@@ -11,6 +14,18 @@ class Book:
                  publish_year,
                  file_format,
                  resource_path):
+        """
+        Constructor
+        :param isbn: ISBN, a 13-digit number starting in "978" or
+        "979" that uniquely identifies the book
+        :param title: a string of the book's title
+        :param author: Name of the author, a string of the author's name
+        :param publish_year: The year the book was published, an int
+        :param file_format: The format of the book as "Hardcover",
+        "Softcover", "Kindle", or "PDF"
+        :param resource_path: Name of the file containing the
+        text of the book, this file must exist
+        """
 
         isbn = str(isbn)
         if len(isbn) != 13 or \
@@ -38,21 +53,45 @@ class Book:
         self._resource_path = resource_path
 
     def get_title(self):
+        """
+        Get title of the book
+        :return: String
+        """
         return self._title
 
     def get_author(self):
+        """
+        Get author of the book
+        :return: String
+        """
         return self._author
 
     def get_year(self):
+        """
+        Get author of the book
+        :return: String
+        """
         return self._publish_year
 
     def get_format(self):
+        """
+        Get author of the book
+        :return: String
+        """
         return self._format
 
     def get_filename(self):
+        """
+        Get resource path of the book
+        :return: String
+        """
         return self._resource_path
 
     def _open_file(self):
+        """
+        Helper function to open the resource
+        :return: opened file handler
+        """
         try:
             input_file = open(self.get_filename(), 'r')
             return input_file
@@ -66,6 +105,10 @@ class Book:
                   self.get_filename())
 
     def get_readability_grade(self):
+        """
+        Get readability grade of the book
+        :return: String
+        """
         opened_file = self._open_file()
         # Read all of the contents of the file
         # into a list of strings called filedata.
@@ -80,25 +123,38 @@ class Book:
         return grade
 
     def get_index(self):
+        """
+        Get words count map of the book
+        :return: dict
+        """
         opened_file = self._open_file()
         words_count = {}
+        # buffer string that stores hyphen break half word,
+        # if no hyphen break word at the end of previous line,
+        # it is a empty string
         hyphen_break_word_first_half = ""
         for line in opened_file.readlines():
+            # concatenate previous half word and reset
+            # it to empty
             word = hyphen_break_word_first_half
             hyphen_break_word_first_half = ""
+            line = line.strip()
             for i in range(len(line)):
                 if line[i].isalnum():
                     word += line[i].lower()
-                elif line[i] == '-' and i == len(line) - 2:
+                # if last character is '-' store the first half of
+                # the word
+                elif line[i] == '-' and i == len(line) - 1:
                     hyphen_break_word_first_half = word
                     word = ""
+                # hyphen at middle of the line will be count as
+                # part of the word
                 elif line[i] == '-':
                     word += line[i]
+                # count the word
                 elif len(word) > 0:
                     words_count[word] = words_count.setdefault(word, 0) + 1
                     word = ""
-        print(words_count)
-
         opened_file.close()
         return words_count
 

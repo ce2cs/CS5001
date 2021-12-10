@@ -47,8 +47,14 @@ class TestBook(TestCase):
         self.assertEqual(self.book.get_filename(), "college.txt")
 
     def test_get_readability_grade(self):
-        pass
+        expected = "College graduate"
+        actual = self.book.get_readability_grade()
+        self.assertEqual(expected, actual)
 
     def test_get_index(self):
-        word_dict = self.book.get_index()
-        print(word_dict)
+        actual = self.book.get_index()
+        expected = {'flesch': 1, 'invented': 1, 'a': 2, 'simple': 1,
+                    'tool': 1, 'to': 1, 'estimate': 1, 'the': 1,
+                    'legibility': 1, 'of': 1, 'document': 1, 'without': 1,
+                    'linguistic': 1, 'analysis': 1}
+        self.assertEqual(actual, expected)
