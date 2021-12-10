@@ -159,12 +159,6 @@ class Book:
         return words_count
 
     def __str__(self):
-        print([self.get_title() + " by " + self.get_author(),
-               str(self.get_year()) + "\nISBN: " + str(self._isbn),
-               self.get_format(),
-               str(self.get_readability_grade()),
-               self.get_filename()
-               ])
         return ", ".join([self.get_title() + " by " + self.get_author(),
                           str(self.get_year()) + "\nISBN: " + str(self._isbn),
                           self.get_format(),
