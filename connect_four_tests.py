@@ -128,5 +128,3 @@ class ConnectFourTest(unittest.TestCase):
 """
         self.assertEqual(expected_board, str(self.cf))
         self.assertFalse(self.cf.is_game_over())
-
-
