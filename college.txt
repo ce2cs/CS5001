@@ -1,2 +1,0 @@
-Flesch invented a simple tool to estimate the legi-
-bility of a document without linguistic analysis.
